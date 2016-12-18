@@ -1,6 +1,10 @@
 # Release notes for `customize-engine-uglify`
 
 <a name="current-release"></a>
+# Version 0.2.0 (Sun, 18 Dec 2016 14:01:55 GMT)
+
+* [4e982dd](https://github.com/bootprint/customize-engine-uglify/commit/4e982dd) Allow the order of files to be specified via a dependency-map - Nils Knappmeier
+
 # Version 0.1.2 (Sun, 18 Dec 2016 12:51:41 GMT)
 
 * [8501274](https://github.com/bootprint/customize-engine-uglify/commit/8501274) Add "schema.js" to "files" in package.json - Nils Knappmeier

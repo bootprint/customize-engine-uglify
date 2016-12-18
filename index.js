@@ -15,7 +15,10 @@ module.exports = {
   defaultConfig: {
     options: {
       outFileName: 'bundle.js',
-      outSourceMap: 'bundle.js.map'
+      outSourceMap: 'bundle.js.map',
+      output: {
+        comments: /(@license|@preserve|^!)/
+      }
     }
   },
 

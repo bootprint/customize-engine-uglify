@@ -70,8 +70,7 @@ describe('customize-engine-uglify:', function () {
     var result = customize()
       .registerEngine('uglify', require('../'))
       .merge({
-        uglify: {
-        }
+        uglify: {}
       })
       .run()
     return expect(result).to.eventually.deep.equal({
@@ -79,5 +78,22 @@ describe('customize-engine-uglify:', function () {
         'bundle.js': ''
       }
     })
+  })
+
+  it('should preserve license comments', function () {
+    return customize()
+      .registerEngine('uglify', require('../'))
+      .merge({
+        uglify: {
+          files: {
+            'with-comment': './test/fixtures/with-comment.js'
+          }
+        }
+
+      })
+      .run()
+      .then(function (result) {
+        return expect(result.uglify['bundle.js']).to.equal('/*!\n * A license\n */\n/* @license */\n/* @preserve */\n\n//# sourceMappingURL=bundle.js.map')
+      })
   })
 })

@@ -1,6 +1,10 @@
 # Release notes for `customize-engine-uglify`
 
 <a name="current-release"></a>
+# Version 0.1.2 (Sun, 18 Dec 2016 12:51:41 GMT)
+
+* [8501274](https://github.com/bootprint/customize-engine-uglify/commit/8501274) Add "schema.js" to "files" in package.json - Nils Knappmeier
+
 # Version 0.1.1 (Sun, 18 Dec 2016 12:50:02 GMT)
 
 * [99d94af](https://github.com/bootprint/customize-engine-uglify/commit/99d94af) Preserve license-comments in output - Nils Knappmeier

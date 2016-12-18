@@ -8,11 +8,14 @@
 
 var _ = require('lodash')
 var uglify = require('uglify-js')
+var orderFiles = require('./lib/orderFiles')
 
 module.exports = {
   schema: require('./schema.js'),
 
   defaultConfig: {
+    files: {},
+    dependencies: {},
     options: {
       outFileName: 'bundle.js',
       outSourceMap: 'bundle.js.map',
@@ -36,7 +39,10 @@ module.exports = {
    * @param config
    */
   run: function (config) {
-    var inputFiles = _.values(config.files)
+    var inputFileOrder = orderFiles(Object.keys(config.files), config.dependencies)
+    var inputFiles = inputFileOrder.map(function (filename) {
+      return config.files[filename]
+    })
     var outputFiles = {}
     if (inputFiles.length === 0) {
       outputFiles[config.options.outFileName] = ''

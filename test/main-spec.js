@@ -96,4 +96,49 @@ describe('customize-engine-uglify:', function () {
         return expect(result.uglify['bundle.js']).to.equal('/*!\n * A license\n */\n/* @license */\n/* @preserve */\n\n//# sourceMappingURL=bundle.js.map')
       })
   })
+
+  it('should add dependencies first', function () {
+    return customize()
+      .registerEngine('uglify', require('../'))
+      .merge({
+        uglify: {
+          files: {
+            'a': './test/fixtures/a.js',
+            'b': './test/fixtures/b.js',
+            'c': './test/fixtures/c.js'
+          },
+          dependencies: {
+            'a': ['b'],
+            'b': ['c']
+          }
+        }
+      })
+      .run()
+      .then(function (result) {
+        return expect(result.uglify['bundle.js']).to.match(/c=1,b=1,a=1;/)
+      })
+  })
+
+  it('should add dependencies first (and the other way around)', function () {
+    // To make sure(r) it is not the indeterministic iteration order of objects
+    return customize()
+      .registerEngine('uglify', require('../'))
+      .merge({
+        uglify: {
+          files: {
+            'a': './test/fixtures/a.js',
+            'b': './test/fixtures/b.js',
+            'c': './test/fixtures/c.js'
+          },
+          dependencies: {
+            'c': ['b'],
+            'b': ['a']
+          }
+        }
+      })
+      .run()
+      .then(function (result) {
+        return expect(result.uglify['bundle.js']).to.match(/a=1,b=1,c=1;/)
+      })
+  })
 })

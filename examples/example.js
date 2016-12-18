@@ -9,6 +9,9 @@ customize()
       files: {
         'a-browser-lib.js': require.resolve('./module1/a-browser-lib.js'),
         'another-browser-lib.js': require.resolve('./module1/another-browser-lib.js')
+      },
+      dependencies: {
+        'a-browser-lib.js': [ 'another-browser-lib.js' ]
       }
     }
   })

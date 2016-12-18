@@ -31,6 +31,9 @@ customize()
       files: {
         'a-browser-lib.js': require.resolve('./module1/a-browser-lib.js'),
         'another-browser-lib.js': require.resolve('./module1/another-browser-lib.js')
+      },
+      dependencies: {
+        'a-browser-lib.js': [ 'another-browser-lib.js' ]
       }
     }
   })
@@ -50,8 +53,8 @@ This will generate the following output
 
 ```
 { uglify: 
-   { 'bundle.js': 'console.log("overriding-browser-lib"),console.log("another-browser-lib");\n//# sourceMappingURL=bundle.js.map',
-     'bundle.js.map': '{"version":3,"sources":["/home/nknappmeier/projects/bootprint/customize-engine-uglify/examples/module2/overriding-browser-lib.js","/home/nknappmeier/projects/bootprint/customize-engine-uglify/examples/module1/another-browser-lib.js"],"names":["console","log"],"mappings":"AAAAA,QAAQC,IAAI,0BCAZD,QAAQC,IAAI","file":"bundle.js"}' } }
+   { 'bundle.js': 'console.log("another-browser-lib"),console.log("overriding-browser-lib");\n//# sourceMappingURL=bundle.js.map',
+     'bundle.js.map': '{"version":3,"sources":["/home/nknappmeier/projects/bootprint/customize-engine-uglify/examples/module1/another-browser-lib.js","/home/nknappmeier/projects/bootprint/customize-engine-uglify/examples/module2/overriding-browser-lib.js"],"names":["console","log"],"mappings":"AAAAA,QAAQC,IAAI,uBCAZD,QAAQC,IAAI","file":"bundle.js"}' } }
 ```
 
 ##  API-reference

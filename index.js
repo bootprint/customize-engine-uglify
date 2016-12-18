@@ -33,8 +33,13 @@ module.exports = {
    * @param config
    */
   run: function (config) {
-    var result = uglify.minify(_.values(config.files), config.options)
+    var inputFiles = _.values(config.files)
     var outputFiles = {}
+    if (inputFiles.length === 0) {
+      outputFiles[config.options.outFileName] = ''
+      return outputFiles
+    }
+    var result = uglify.minify(inputFiles, config.options)
     outputFiles[config.options.outFileName] = result.code
     outputFiles[config.options.outSourceMap] = result.map
     return outputFiles

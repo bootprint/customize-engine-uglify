@@ -65,4 +65,19 @@ describe('customize-engine-uglify:', function () {
       }
     })
   })
+
+  it('should return an empty file if no input files are given', function () {
+    var result = customize()
+      .registerEngine('uglify', require('../'))
+      .merge({
+        uglify: {
+        }
+      })
+      .run()
+    return expect(result).to.eventually.deep.equal({
+      'uglify': {
+        'bundle.js': ''
+      }
+    })
+  })
 })

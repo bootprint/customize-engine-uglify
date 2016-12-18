@@ -51,6 +51,7 @@
   },
   "files": [
     "index.js",
+    "schema.js",
     "lib",
     "bin"
   ],

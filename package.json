@@ -1,6 +1,6 @@
 {
   "name": "customize-engine-uglify",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Uglify adapter for Customize",
   "repository": {
     "type": "git",

@@ -22,10 +22,10 @@ The following example demonstrates how to use this module:
 ```js
 var customize = require('customize')
 
-// Load files from one directory and merge with second
+// Load files from one directory and merge with a second one
 customize()
   .registerEngine('uglify', require('customize-engine-uglify'))
-  // Add one less file
+  // Add two javascript files
   .merge({
     uglify: {
       files: {

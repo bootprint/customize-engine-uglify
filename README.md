@@ -5,7 +5,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/bootprint/customize-engine-uglify.svg)](https://coveralls.io/r/bootprint/customize-engine-uglify)
 
 
-> Uglify adapter for Customize
+> UglifyJS adapter for Customize
 
 
 # Installation

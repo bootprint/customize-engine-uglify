@@ -1,6 +1,11 @@
 # Release notes for `customize-engine-uglify`
 
 <a name="current-release"></a>
+# Version 1.0.0 (Tue, 20 Dec 2016 14:52:06 GMT)
+
+* [e0336fc](https://github.com/bootprint/customize-engine-uglify/commit/e0336fc) Preparations for version 1.0. - Nils Knappmeier
+* [4ff654a](https://github.com/bootprint/customize-engine-uglify/commit/4ff654a) Fix configuration-schema - Nils Knappmeier
+
 # Version 0.2.0 (Sun, 18 Dec 2016 14:01:55 GMT)
 
 * [4e982dd](https://github.com/bootprint/customize-engine-uglify/commit/4e982dd) Allow the order of files to be specified via a dependency-map - Nils Knappmeier

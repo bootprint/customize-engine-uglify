@@ -1,7 +1,7 @@
 {
   "name": "customize-engine-uglify",
   "version": "0.2.0",
-  "description": "Uglify adapter for Customize",
+  "description": "UglifyJS adapter for Customize",
   "repository": {
     "type": "git",
     "url": "git@github.com:bootprint/customize-engine-uglify.git"
@@ -19,7 +19,7 @@
   "license": "MIT",
   "scripts": {
     "preformat": "standard --version || npm -g install standard",
-    "format": "standard --format",
+    "format": "standard --fix",
     "pretest": "standard --version || npm -g install standard",
     "test": "mocha --recursive && standard",
     "thought": "thought run -a",
@@ -36,13 +36,14 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "chai-as-promised": "^6.0.0",
-    "customize": "<1.0.0",
+    "customize": "^1.0.0",
     "ghooks": "^1.0.3",
     "mocha": "^2.4.5",
-    "thoughtful-release": "^0.3.0"
+    "thoughtful-release": "^0.3.0",
+    "trace-and-clarify-if-possible": "^1.0.0"
   },
   "peerDependencies": {
-    "customize": "<1.0.0"
+    "customize": "^1.0.0"
   },
   "standard": {
     "ignore": [
@@ -57,7 +58,7 @@
   ],
   "config": {
     "ghooks": {
-      "pre-commit": "standard"
+      "pre-push": "thoughtful precommit && standard"
     }
   },
   "keywords": []

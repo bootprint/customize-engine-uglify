@@ -34,7 +34,7 @@
     "uglify-js": "^2.8.5"
   },
   "devDependencies": {
-    "chai": "^3.2.0",
+    "chai": "^4.0.0",
     "chai-as-promised": "^6.0.0",
     "customize": "^1.0.0",
     "ghooks": "^2.0.0",
